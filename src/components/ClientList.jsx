@@ -15,7 +15,7 @@ class ClientList extends Component {
   handleClick = () => {
     console.log('Clicked on a client name');
   };
-//Current goal here to map through an array of clients. This should render an individual card per name. These cards should have a click function attached to each that will allow the case manager to get information specifically tied to client they clicked on.
+  //Current goal here to map through an array of clients. This should render an individual card per name. These cards should have a click function attached to each that will allow the case manager to get information specifically tied to client they clicked on.
   render() {
     return (
       <div className="col-md-2" style={{ textAlign: 'left' }}>
@@ -23,8 +23,8 @@ class ClientList extends Component {
         <div class="card">
           <ul class="list-group list-group-flush">
             <li
-              key={id}
-              id={clients.}
+              //   key={id}
+              //   id={clients.}
               class="list-group-item"
               onClick={this.handleClick}
             >
