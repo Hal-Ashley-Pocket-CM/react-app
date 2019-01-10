@@ -8,17 +8,19 @@ class Login extends Component {
       password: '',
       passwordState: ''
     };
-    this.change = this.change.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.change = this.change.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  change() {
-    console.log('I got to change function');
-  }
+  // change(e, name) {
+  //   e.preventDefault();
+  //   this.setState({ name: e.target.value });
+  // }
 
-  handleSubmit() {
-    console.log('form was submitted');
-  }
+  // handleSubmit(event) {
+  //   event.preventDefault();
+  //   console.log('form was submitted');
+  // }
 
   render() {
     return (
@@ -38,11 +40,13 @@ class Login extends Component {
                   </label>
                   <div className="col-sm-8">
                     <input
-                      type="text"
-                      readonly
+                      type="email"
+                      // readonly
                       className="form-control-plaintext"
                       id="staticEmail"
-                      value="email@example.com"
+                      name="email"
+                      // value={this.state.email}
+                      // onChange={this.change}
                     />
                   </div>
                 </div>
@@ -59,8 +63,20 @@ class Login extends Component {
                       className="form-control"
                       id="inputPassword"
                       placeholder="Password"
+                      name="password"
+                      // value={this.state.password}
+                      // onChange={this.change(e, 'password')}
                     />
                   </div>
+                </div>
+                <div style={{ textAlign: 'right' }}>
+                  <button
+                    type="button"
+                    className="btn btn-success"
+                    onClick={this.handleSubmit}
+                  >
+                    Submit
+                  </button>
                 </div>
               </form>
             </div>
