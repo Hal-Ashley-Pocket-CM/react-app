@@ -10,10 +10,9 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <div id="dash" class="">
+      <div id="dash" className="dashboard">
         <Nav />
-
-        {/* <ClientList /> */}
+        <ClientList />
       </div>
     );
   }
