@@ -24,53 +24,48 @@ class Login extends Component {
     return (
       <div id="login">
         <Nav />
-        <div className="col-md-6">
-          <div className="card">
-            <div className="dropdown-menu">
-              <form className="px-4 py-3" onSubmit={this.handleSubmit}>
-                <div className="form-group">
-                  <label htmlFor="exampleDropdownFormEmail1">
-                    Email address
+        <div className="row">
+          <div className="col-md-4" />
+          <div className="col-md-4">
+            <div className="card" style={{ textAlign: 'center' }}>
+              <form>
+                <div className="form-group row">
+                  <label
+                    htmlFor="staticEmail"
+                    className="col-sm-4 col-form-label"
+                  >
+                    Email
                   </label>
-                  <input
-                    type="email"
-                    className="form-control"
-                    id="exampleDropdownFormEmail1"
-                    placeholder="email@example.com"
-                  />
+                  <div className="col-sm-8">
+                    <input
+                      type="text"
+                      readonly
+                      className="form-control-plaintext"
+                      id="staticEmail"
+                      value="email@example.com"
+                    />
+                  </div>
                 </div>
-                <div className="form-group">
-                  <label htmlFor="exampleDropdownFormPassword1">Password</label>
-                  <input
-                    type="password"
-                    className="form-control"
-                    id="exampleDropdownFormPassword1"
-                    placeholder="Password"
-                  />
-                </div>
-                <div className="form-check">
-                  <input
-                    type="checkbox"
-                    className="form-check-input"
-                    id="dropdownCheck"
-                  />
-                  <label className="form-check-label" htmlFor="dropdownCheck">
-                    Remember me
+                <div className="form-group row">
+                  <label
+                    htmlFor="inputPassword"
+                    className="col-sm-4 col-form-label"
+                  >
+                    Password
                   </label>
+                  <div className="col-sm-8">
+                    <input
+                      type="password"
+                      className="form-control"
+                      id="inputPassword"
+                      placeholder="Password"
+                    />
+                  </div>
                 </div>
-                <button type="submit" className="btn btn-primary">
-                  Sign in
-                </button>
               </form>
-              <div className="dropdown-divider" />
-              <a className="dropdown-item" href="#">
-                New around here? Sign up
-              </a>
-              <a className="dropdown-item" href="#">
-                Forgot password?
-              </a>
             </div>
           </div>
+          <div className="col-md-4" />
         </div>
       </div>
     );
