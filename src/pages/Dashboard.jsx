@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Nav from '../components/Navbar';
 import ClientList from '../components/ClientList';
+// import FluidInfo from '../components/FluidInfo';
 class Dashboard extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { selectedClient: {} };
     // this.onChange = this.onChange.bind(this);
   }
 

@@ -1,0 +1,9 @@
+#border {
+  background-color: black;
+}
+
+.list-group-item,
+.card {
+  background-color: lightgrey;
+  border-color: black;
+}
