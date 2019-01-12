@@ -9,14 +9,18 @@ class Login extends Component {
       password: '',
       passwordState: ''
     };
-    // this.change = this.change.bind(this);
+    this.handleEmail = this.handleEmail.bind(this);
+    this.handlePassword = this.handlePassword.bind(this);
+
     // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  // change(e, name) {
-  //   e.preventDefault();
-  //   this.setState({ name: e.target.value });
-  // }
+  handleEmail = event => {
+    this.setState({ email: event.target.value });
+  };
+  handlePassword = event => {
+    this.setState({ password: event.target.value });
+  };
 
   // handleSubmit(event) {
   //   event.preventDefault();
@@ -36,7 +40,10 @@ class Login extends Component {
             >
               <h3 style={{ color: 'white' }}>Welcome to PCM</h3>
               <h6 style={{ color: 'white' }}>Lets get started</h6>
-              <form style={{ textAlign: 'left', margin: '25px' }}>
+              <form
+                onSubmit={this.handleSubmit}
+                style={{ textAlign: 'left', margin: '25px' }}
+              >
                 <div class="form-group">
                   <label
                     htmlFor="exampleInputEmail1"
@@ -46,10 +53,13 @@ class Login extends Component {
                   </label>
                   <input
                     type="email"
+                    name="email"
                     class="form-control"
                     id="exampleInputEmail1"
                     aria-describedby="emailHelp"
                     placeholder="Enter email"
+                    value={this.state.email}
+                    onChange={this.handleEmail}
                   />
                   <small id="emailHelp" class="form-text text-muted">
                     required*
@@ -64,9 +74,12 @@ class Login extends Component {
                   </label>
                   <input
                     type="password"
+                    name="password"
                     class="form-control"
                     id="exampleInputPassword1"
                     placeholder="Password"
+                    value={this.state.password}
+                    onChange={this.handlePassword}
                   />
                   <small id="emailHelp" class="form-text text-muted">
                     required*
