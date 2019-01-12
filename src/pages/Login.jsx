@@ -34,7 +34,7 @@ class Login extends Component {
               className="card"
               style={{ textAlign: 'center', marginTop: '50%' }}
             >
-              <form>
+              <form style={{ textAlign: 'left', margin: '25px' }}>
                 <div class="form-group">
                   <label htmlFor="exampleInputEmail1">Email address</label>
                   <input
@@ -60,19 +60,11 @@ class Login extends Component {
                     required*
                   </small>
                 </div>
-                <div class="form-group form-check">
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    id="exampleCheck1"
-                  />
-                  <label class="form-check-label" for="exampleCheck1">
-                    Check me out
-                  </label>
+                <div style={{ textAlign: 'right' }}>
+                  <button type="submit" class="btn btn-success">
+                    Submit
+                  </button>
                 </div>
-                <button type="submit" class="btn btn-success">
-                  Submit
-                </button>
               </form>
             </div>
           </div>
