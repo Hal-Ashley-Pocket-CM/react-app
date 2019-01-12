@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NavLogin from '../components/NavLogin';
+import './login.css';
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -30,57 +31,48 @@ class Login extends Component {
           <div className="col-md-4" />
           <div className="col-md-4">
             <div
-              className="card mx-auto"
+              className="card"
               style={{ textAlign: 'center', marginTop: '50%' }}
             >
               <form>
-                <div className="form-group row">
-                  <label
-                    htmlFor="staticEmail"
-                    className="col-sm-4 col-form-label"
-                  >
-                    Email
+                <div class="form-group">
+                  <label htmlFor="exampleInputEmail1">Email address</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    placeholder="Enter email"
+                  />
+                  <small id="emailHelp" class="form-text text-muted">
+                    required*
+                  </small>
+                </div>
+                <div class="form-group">
+                  <label htmlFor="exampleInputPassword1">Password</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="exampleInputPassword1"
+                    placeholder="Password"
+                  />
+                  <small id="emailHelp" class="form-text text-muted">
+                    required*
+                  </small>
+                </div>
+                <div class="form-group form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="exampleCheck1"
+                  />
+                  <label class="form-check-label" for="exampleCheck1">
+                    Check me out
                   </label>
-                  <div className="col-sm-8">
-                    <input
-                      type="email"
-                      // readonly
-                      className="form-control-plaintext"
-                      id="staticEmail"
-                      name="email"
-                      value={this.state.email}
-                      // onChange={this.change}
-                    />
-                  </div>
                 </div>
-                <div className="form-group row">
-                  <label
-                    htmlFor="inputPassword"
-                    className="col-sm-4 col-form-label"
-                  >
-                    Password
-                  </label>
-                  <div className="col-sm-8">
-                    <input
-                      type="password"
-                      className="form-control"
-                      id="inputPassword"
-                      placeholder="Password"
-                      name="password"
-                      value={this.state.password}
-                      // onChange={this.change(e, 'password')}
-                    />
-                  </div>
-                </div>
-                <div style={{ textAlign: 'right' }}>
-                  <button
-                    type="button"
-                    className="btn btn-success"
-                    onClick={this.handleSubmit}
-                  >
-                    Submit
-                  </button>
-                </div>
+                <button type="submit" class="btn btn-success">
+                  Submit
+                </button>
               </form>
             </div>
           </div>
