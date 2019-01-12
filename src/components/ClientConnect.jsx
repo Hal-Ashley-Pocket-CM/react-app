@@ -6,6 +6,7 @@ class ClientConnect extends Component {
     super(props);
     this.state = {
       clients: clients,
+      text: '',
       id: 0,
       name: '', //client name
       caseManager: '', //case manager name
@@ -14,6 +15,9 @@ class ClientConnect extends Component {
       convoData: []
     };
     this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmitNow = this.handleSubmitNow.bind(this);
+    this.handleSubmitLater = this.handleSubmitLater.bind(this);
   }
   componentDidMount() {
     console.log("I'm going to be an API that hits court dates ");
@@ -21,6 +25,18 @@ class ClientConnect extends Component {
 
   handleClick = (id, name) => {
     console.log('clicked: ', id, name);
+  };
+  handleChange = event => {
+    this.setState({ text: event.target.value });
+  };
+
+  handleSubmitNow = text => {
+    console.log('handle submit now selected');
+    console.log(this.state.text);
+  };
+  handleSubmitLater = text => {
+    console.log('handle submit later selected');
+    console.log(this.state.text);
   };
   //Current goal here to map through an array of clients. This should render an individual card per name. These cards should have a click function attached to each that will allow the case manager to get information specifically tied to client they clicked on.
   render() {
@@ -82,6 +98,8 @@ class ClientConnect extends Component {
                       type="text"
                       className="form-control font-weight-bold text-wrap"
                       aria-label="Start typing here..."
+                      value={this.state.text}
+                      onChange={this.handleChange}
                     />
                     <div className="input-group-append">
                       <button
@@ -94,10 +112,18 @@ class ClientConnect extends Component {
                         Send
                       </button>
                       <div className="dropdown-menu">
-                        <a className="dropdown-item" href="#">
+                        <a
+                          className="dropdown-item"
+                          href="#"
+                          onClick={this.handleSubmitNow}
+                        >
                           Send Now
                         </a>
-                        <a className="dropdown-item" href="#">
+                        <a
+                          className="dropdown-item"
+                          href="#"
+                          onClick={this.handleSubmitLater}
+                        >
                           Send Later
                         </a>
                       </div>
