@@ -22,10 +22,12 @@ class Login extends Component {
     this.setState({ password: event.target.value });
   };
 
-  // handleSubmit(event) {
-  //   event.preventDefault();
-  //   console.log('form was submitted');
-  // }
+  handleSubmit(event) {
+    event.preventDefault();
+    console.log('form was submitted');
+    // console.log(this.state.email);
+    // console.log(this.state.password);
+  }
 
   render() {
     return (
@@ -44,7 +46,7 @@ class Login extends Component {
                 onSubmit={this.handleSubmit}
                 style={{ textAlign: 'left', margin: '25px' }}
               >
-                <div class="form-group">
+                <div className="form-group">
                   <label
                     htmlFor="exampleInputEmail1"
                     style={{ color: 'white' }}
@@ -54,18 +56,18 @@ class Login extends Component {
                   <input
                     type="email"
                     name="email"
-                    class="form-control"
+                    className="form-control"
                     id="exampleInputEmail1"
                     aria-describedby="emailHelp"
                     placeholder="Enter email"
                     value={this.state.email}
                     onChange={this.handleEmail}
                   />
-                  <small id="emailHelp" class="form-text text-muted">
+                  <small id="emailHelp" className="form-text text-muted">
                     required*
                   </small>
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                   <label
                     htmlFor="exampleInputPassword1"
                     style={{ color: 'white' }}
@@ -75,18 +77,18 @@ class Login extends Component {
                   <input
                     type="password"
                     name="password"
-                    class="form-control"
+                    className="form-control"
                     id="exampleInputPassword1"
                     placeholder="Password"
                     value={this.state.password}
                     onChange={this.handlePassword}
                   />
-                  <small id="emailHelp" class="form-text text-muted">
+                  <small id="emailHelp" className="form-text text-muted">
                     required*
                   </small>
                 </div>
                 <div style={{ textAlign: 'right' }}>
-                  <button type="submit" class="btn btn-success">
+                  <button type="submit" className="btn btn-success">
                     Submit
                   </button>
                 </div>
