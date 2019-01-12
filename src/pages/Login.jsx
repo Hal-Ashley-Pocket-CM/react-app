@@ -34,6 +34,8 @@ class Login extends Component {
               className="card dark bg-dark"
               style={{ textAlign: 'center', marginTop: '50%' }}
             >
+              <h3 style={{ color: 'white' }}>Welcome to PCM</h3>
+              <h6 style={{ color: 'white' }}>Lets get started</h6>
               <form style={{ textAlign: 'left', margin: '25px' }}>
                 <div class="form-group">
                   <label

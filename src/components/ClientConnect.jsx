@@ -78,7 +78,7 @@ class ClientConnect extends Component {
               <div className="row">
                 <div className="col-md-12">
                   <div className="input-group">
-                    <input
+                    <textarea
                       type="text"
                       className="form-control font-weight-bold text-wrap"
                       aria-label="Start typing here..."
