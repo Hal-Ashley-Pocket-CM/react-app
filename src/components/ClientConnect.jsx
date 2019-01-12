@@ -10,7 +10,8 @@ class ClientConnect extends Component {
       name: '', //client name
       caseManager: '', //case manager name
       messages: [], // this will be an array of objects including dates/times/message strings
-      selectedClient: {}
+      selectedClient: {},
+      convoData: []
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -65,6 +66,43 @@ class ClientConnect extends Component {
                   <button type="button" className="btn btn-success">
                     Mass Message
                   </button>
+                </div>
+              </div>
+
+              <div className="row">
+                <div className="col-md-12">
+                  <div>{this.state.convoData}</div>
+                </div>
+              </div>
+
+              <div className="row">
+                <div className="col-md-12">
+                  <div className="input-group">
+                    <input
+                      type="text"
+                      className="form-control font-weight-bold text-wrap"
+                      aria-label="Start typing here..."
+                    />
+                    <div className="input-group-append">
+                      <button
+                        className="btn btn-outline-success dropdown-toggle"
+                        type="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        Send
+                      </button>
+                      <div className="dropdown-menu">
+                        <a className="dropdown-item" href="#">
+                          Send Now
+                        </a>
+                        <a className="dropdown-item" href="#">
+                          Send Later
+                        </a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

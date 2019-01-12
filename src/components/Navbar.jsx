@@ -12,6 +12,9 @@ const Nav = props => (
       <a className="navbar-brand" href="/connect">
         Connect
       </a>
+      <a className="navbar-brand" href="/connect">
+        Profile
+      </a>
       <a className="navbar-brand" href="/login">
         Logout
       </a>

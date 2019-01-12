@@ -31,12 +31,17 @@ class Login extends Component {
           <div className="col-md-4" />
           <div className="col-md-4">
             <div
-              className="card"
+              className="card dark bg-dark"
               style={{ textAlign: 'center', marginTop: '50%' }}
             >
               <form style={{ textAlign: 'left', margin: '25px' }}>
                 <div class="form-group">
-                  <label htmlFor="exampleInputEmail1">Email address</label>
+                  <label
+                    htmlFor="exampleInputEmail1"
+                    style={{ color: 'white' }}
+                  >
+                    Email address
+                  </label>
                   <input
                     type="email"
                     class="form-control"
@@ -49,7 +54,12 @@ class Login extends Component {
                   </small>
                 </div>
                 <div class="form-group">
-                  <label htmlFor="exampleInputPassword1">Password</label>
+                  <label
+                    htmlFor="exampleInputPassword1"
+                    style={{ color: 'white' }}
+                  >
+                    Password
+                  </label>
                   <input
                     type="password"
                     class="form-control"
