@@ -29,8 +29,11 @@ class Login extends Component {
         <div className="row">
           <div className="col-md-4" />
           <div className="col-md-4">
-            <div className="card" style={{ textAlign: 'center' }}>
-              <form style={{ textAlign: 'center' }}>
+            <div
+              className="card mx-auto"
+              style={{ textAlign: 'center', marginTop: '50%' }}
+            >
+              <form>
                 <div className="form-group row">
                   <label
                     htmlFor="staticEmail"
@@ -45,7 +48,7 @@ class Login extends Component {
                       className="form-control-plaintext"
                       id="staticEmail"
                       name="email"
-                      // value={this.state.email}
+                      value={this.state.email}
                       // onChange={this.change}
                     />
                   </div>
@@ -64,7 +67,7 @@ class Login extends Component {
                       id="inputPassword"
                       placeholder="Password"
                       name="password"
-                      // value={this.state.password}
+                      value={this.state.password}
                       // onChange={this.change(e, 'password')}
                     />
                   </div>
