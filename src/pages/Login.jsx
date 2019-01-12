@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Nav from '../components/Navbar';
+import NavLogin from '../components/NavLogin';
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -25,12 +25,12 @@ class Login extends Component {
   render() {
     return (
       <div id="login">
-        <Nav />
+        <NavLogin />
         <div className="row">
           <div className="col-md-4" />
           <div className="col-md-4">
             <div className="card" style={{ textAlign: 'center' }}>
-              <form>
+              <form style={{ textAlign: 'center' }}>
                 <div className="form-group row">
                   <label
                     htmlFor="staticEmail"
