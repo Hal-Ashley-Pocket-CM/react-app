@@ -77,7 +77,10 @@ class ClientConnect extends Component {
                 </div>
               </div>
 
-              <div className="row" style={{ textAlign: 'right' }}>
+              <div
+                className="row"
+                style={{ textAlign: 'right', margin: '10px' }}
+              >
                 <div className="col-md-12">
                   <button type="button" className="btn btn-success">
                     Mass Message
