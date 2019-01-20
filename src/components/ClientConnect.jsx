@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { clients, convoData } from '../fakeData';
 import NameCard from './NameCard';
+import MassMessage from './MassMessage';
 class ClientConnect extends Component {
   constructor(props) {
     super(props);
@@ -46,6 +47,7 @@ class ClientConnect extends Component {
   render() {
     return (
       <div>
+        <MassMessage />
         <div className="row">
           <div
             className="col-md-2"
@@ -55,10 +57,7 @@ class ClientConnect extends Component {
             }}
           >
             <div id="clientButtons" className="card">
-              <ul
-                id="listBackdrop"
-                className="list-group list-group-flush"
-              >
+              <ul id="listBackdrop" className="list-group list-group-flush">
                 {this.state.clients.map(clients => {
                   return (
                     <NameCard
@@ -93,7 +92,13 @@ class ClientConnect extends Component {
                 style={{ textAlign: 'right', margin: '10px' }}
               >
                 <div className="col-md-12">
-                  <button type="button" className="btn btn-success">
+                  <button
+                    type="button"
+                    className="btn btn-success"
+                    data-toggle="modal"
+                    data-target="#exampleModal"
+                    data-whatever="All Clients"
+                  >
                     Mass Message
                   </button>
                 </div>
