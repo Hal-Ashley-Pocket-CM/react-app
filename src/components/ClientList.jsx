@@ -33,7 +33,7 @@ class ClientList extends Component {
     this.setState({
       selectedClient: { id: id, name: name, phone: phone, checkIns: checkIns }
     });
-    let client = this.state.selectedClient;
+    // let client = this.state.selectedClient;
   };
 
   componentDidUpdate() {
@@ -109,19 +109,19 @@ class ClientList extends Component {
 
                   <div className="row">
                     <div className="col-md-12">
-                      <ul>
-                        {this.state.checkIns.map(checkIn => {
-                          // console.log(clients);
+                      {/* <ul>
+                        {this.state.selectedClient.checkIns.map(checkIn => {
+                          // console.log(checkIn);
                           return (
                             <CheckIn
                               id={checkIn.id}
                               key={checkIn.id}
-                              checkIns={checkIn}
+                              checkIn={checkIn}
                               handleSelectCheckIn={this.handleSelectCheckIn}
                             />
                           );
                         })}
-                      </ul>
+                      </ul> */}
                     </div>
                   </div>
                 </div>

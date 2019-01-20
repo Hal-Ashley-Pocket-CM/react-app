@@ -10,6 +10,7 @@ const Main = () => (
       <Route path="/login" component={Login} />
       <Route path="/dash" component={Dashboard} />
       <Route path="/connect" component={Messaging} />
+      <Route path="/connect" component={Messaging} />
     </Switch>
   </main>
 );

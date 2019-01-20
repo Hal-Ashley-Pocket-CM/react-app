@@ -5,7 +5,7 @@ const CheckIn = props => {
     <li
       id={props.id}
       key={props.id}
-      onClick={() => props.handleClick(props.id)}
+      onClick={() => props.handleSelectCheckIn(props.id)}
     >
       <a href="#">{props.checkIn}</a>
     </li>

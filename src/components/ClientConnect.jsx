@@ -50,15 +50,15 @@ class ClientConnect extends Component {
           <div
             className="col-md-2"
             style={{
-              textAlign: 'left',
-              padding: '5px',
               marginTop: '15px',
-              marginLeft: '15px',
-              backgroundColor: 'darkgray'
+              marginLeft: '15px'
             }}
           >
             <div id="clientButtons" className="card">
-              <ul id="listBackdrop" className="list-group list-group-flush">
+              <ul
+                id="listBackdrop"
+                className="list-group list-group-flush"
+              >
                 {this.state.clients.map(clients => {
                   return (
                     <NameCard
