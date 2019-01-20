@@ -1,4 +1,5 @@
 import React from 'react';
+import { clients } from '../fakeData';
 //In this file the goal is to get all clients and allow the user to select some or all of the clients to send this mass message to.
 const MassMessage = props => {
   return (
@@ -29,13 +30,53 @@ const MassMessage = props => {
             <form>
               <div className="form-group">
                 <label htmlFor="recipient-name" className="col-form-label">
-                  Recipient:
+                  Select Clients:
                 </label>
-                <input
-                  type="checkbox"
-                  aria-label="Checkbox for following text input"
-                />
+
+                <div className="input-group mb-3">
+                  <div className="input-group-prepend">
+                    <div className="input-group-text">
+                      <input
+                        type="checkbox"
+                        aria-label="Checkbox for following text input"
+                      />
+                    </div>
+                    <label style={{ marginLeft: '5px' }}>Select All</label>
+                  </div>
+                </div>
+                {clients.map(clients => {
+                  return (
+                    <div className="input-group mb-3">
+                      <div className="input-group-prepend">
+                        <div className="input-group-text">
+                          <input
+                            type="checkbox"
+                            aria-label="Checkbox for following text input"
+                          />
+                        </div>
+                      </div>
+
+                      {/* this is where I want to map all clients and allow the user to select some or all clients to send a message to. */}
+
+                      <p
+                        id={clients.client.id}
+                        key={clients.client.id}
+                        name={clients.client.name}
+                        phone={clients.client.phone}
+                        className="form-control"
+                      >
+                        {clients.client.name}
+                      </p>
+                    </div>
+                  );
+                })}
               </div>
+              {/* <input
+                    type="text"
+                    className="form-control"
+                    aria-label="Text input with checkbox"
+                  /> */}
+
               <div className="form-group">
                 <label htmlFor="message-text" className="col-form-label">
                   Message:
