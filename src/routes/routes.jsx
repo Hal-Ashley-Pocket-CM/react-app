@@ -6,11 +6,10 @@ import { Switch, Route } from 'react-router';
 const Main = () => (
   <main>
     <Switch>
-      {/* <Route exact path='/' component={Landing}/> */}
-      <Route path="/login" component={Login} />
+      <Route exact path="/" component={Login} />
       <Route path="/dash" component={Dashboard} />
       <Route path="/connect" component={Messaging} />
-      <Route path="/connect" component={Messaging} />
+      {/* <Route path="/connect" component={Messaging} /> */}
     </Switch>
   </main>
 );
