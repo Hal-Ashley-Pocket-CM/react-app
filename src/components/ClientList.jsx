@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { clients } from '../fakeData';
 import NameCard from './NameCard';
-import CheckIn from './CheckIns';
+import CheckIn from './CheckIn';
 import './clientList.css';
 class ClientList extends Component {
   constructor(props) {
@@ -25,6 +25,7 @@ class ClientList extends Component {
   }
 
   handleSelectCheckIn = id => {
+    console.log(this.state.id);
     console.log(this.state.checkIn);
   };
 

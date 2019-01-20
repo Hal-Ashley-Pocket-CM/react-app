@@ -41,7 +41,7 @@ const MassMessage = props => {
                         aria-label="Checkbox for following text input"
                       />
                     </div>
-                    <label style={{ marginLeft: '5px' }}>Select All</label>
+                    <label style={{ marginLeft: '12px' }}>Select All</label>
                   </div>
                 </div>
                 {clients.map(clients => {
