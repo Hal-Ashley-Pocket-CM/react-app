@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Nav from '../components/Navbar';
 import ClientConnect from '../components/ClientConnect';
-
+import './login.css';
+import Footer from '../components/Footer';
 class Messaging extends Component {
   constructor(props) {
     super(props);

@@ -4,6 +4,19 @@
 
 .list-group-item,
 .card {
-  background-color: lightgrey;
   border-color: black;
+}
+
+.list-group-item {
+  background-color: grey;
+  font-size: 16px;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: blue;
+  text-decoration: none;
 }

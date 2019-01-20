@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Nav = props => (
+const NavLogin = props => (
   <div>
     <nav className="navbar navbar-dark bg-dark">
       {/* <a className="navbar-brand" href="#">
@@ -12,14 +12,11 @@ const Nav = props => (
       <a className="navbar-brand" href="/connect">
         Connect
       </a>
-      <a className="navbar-brand" href="/connect">
-        Profile
-      </a>
-      <a className="navbar-brand" href="/login">
+      {/* <a className="navbar-brand" href="/login">
         Logout
-      </a>
+      </a> */}
     </nav>
   </div>
 );
 
-export default Nav;
+export default NavLogin;

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Nav from '../components/Navbar';
+import NavLogin from '../components/NavLogin';
+import './login.css';
+import Footer from '../components/Footer';
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -8,73 +10,86 @@ class Login extends Component {
       password: '',
       passwordState: ''
     };
-    // this.change = this.change.bind(this);
+    this.handleEmail = this.handleEmail.bind(this);
+    this.handlePassword = this.handlePassword.bind(this);
+
     // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  // change(e, name) {
-  //   e.preventDefault();
-  //   this.setState({ name: e.target.value });
-  // }
+  handleEmail = event => {
+    this.setState({ email: event.target.value });
+  };
+  handlePassword = event => {
+    this.setState({ password: event.target.value });
+  };
 
-  // handleSubmit(event) {
-  //   event.preventDefault();
-  //   console.log('form was submitted');
-  // }
+  handleSubmit(event) {
+    event.preventDefault();
+    console.log('form was submitted');
+    // console.log(this.state.email);
+    // console.log(this.state.password);
+  }
 
   render() {
     return (
       <div id="login">
-        <Nav />
+        <NavLogin />
         <div className="row">
           <div className="col-md-4" />
           <div className="col-md-4">
-            <div className="card" style={{ textAlign: 'center' }}>
-              <form>
-                <div className="form-group row">
+            <div
+              className="card dark bg-dark"
+              style={{ textAlign: 'center', marginTop: '50%' }}
+            >
+              <h3 style={{ color: 'white' }}>Welcome to PCM</h3>
+              <h6 style={{ color: 'white' }}>Lets get started</h6>
+              <form
+                onSubmit={this.handleSubmit}
+                style={{ textAlign: 'left', margin: '25px' }}
+              >
+                <div className="form-group">
                   <label
-                    htmlFor="staticEmail"
-                    className="col-sm-4 col-form-label"
+                    htmlFor="exampleInputEmail1"
+                    style={{ color: 'white' }}
                   >
-                    Email
+                    Email address
                   </label>
-                  <div className="col-sm-8">
-                    <input
-                      type="email"
-                      // readonly
-                      className="form-control-plaintext"
-                      id="staticEmail"
-                      name="email"
-                      // value={this.state.email}
-                      // onChange={this.change}
-                    />
-                  </div>
+                  <input
+                    type="email"
+                    name="email"
+                    className="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    placeholder="Enter email"
+                    value={this.state.email}
+                    onChange={this.handleEmail}
+                  />
+                  <small id="emailHelp" className="form-text text-muted">
+                    required*
+                  </small>
                 </div>
-                <div className="form-group row">
+                <div className="form-group">
                   <label
-                    htmlFor="inputPassword"
-                    className="col-sm-4 col-form-label"
+                    htmlFor="exampleInputPassword1"
+                    style={{ color: 'white' }}
                   >
                     Password
                   </label>
-                  <div className="col-sm-8">
-                    <input
-                      type="password"
-                      className="form-control"
-                      id="inputPassword"
-                      placeholder="Password"
-                      name="password"
-                      // value={this.state.password}
-                      // onChange={this.change(e, 'password')}
-                    />
-                  </div>
+                  <input
+                    type="password"
+                    name="password"
+                    className="form-control"
+                    id="exampleInputPassword1"
+                    placeholder="Password"
+                    value={this.state.password}
+                    onChange={this.handlePassword}
+                  />
+                  <small id="emailHelp" className="form-text text-muted">
+                    required*
+                  </small>
                 </div>
                 <div style={{ textAlign: 'right' }}>
-                  <button
-                    type="button"
-                    className="btn btn-success"
-                    onClick={this.handleSubmit}
-                  >
+                  <button type="submit" className="btn btn-success">
                     Submit
                   </button>
                 </div>
@@ -83,6 +98,8 @@ class Login extends Component {
           </div>
           <div className="col-md-4" />
         </div>
+
+        <Footer />
       </div>
     );
   }
