@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { clients } from '../fakeData';
 import NameCard from './NameCard';
+import CheckIn from './CheckIns';
 import './clientList.css';
 class ClientList extends Component {
   constructor(props) {
@@ -10,33 +11,42 @@ class ClientList extends Component {
       selectedClient: {},
       id: 0,
       name: '',
+      phone: '',
       checkIns: [],
+      checkIn: {},
       courtDates: []
     };
     this.handleClick = this.handleClick.bind(this);
+    this.handleSelectCheckIn = this.handleSelectCheckIn.bind(this);
     // this.displayData = this.displayData.bind(this);
   }
   componentDidMount() {
     console.log("i'm loaded here");
   }
 
-  handleClick = (id, name) => {
-    // console.log('Clicked on a client', id, name);
-    this.setState({ selectedClient: { id: id, name: name } });
-    let client = this.state.selectedClient;
-    // this.displayData(client);
+  handleSelectCheckIn = id => {
+    console.log(this.state.checkIn);
   };
 
-  // async displayData(client) {
-  //   await this.componentDidUpdate();
-  //   // console.log(client);
-  // }
+  handleClick = (id, name, phone, checkIns) => {
+    // add checkins the array of objects to this selected Client object. Then display the array of checkins showing each check in as a list item
+    this.setState({
+      selectedClient: { id: id, name: name, phone: phone, checkIns: checkIns }
+    });
+    let client = this.state.selectedClient;
+  };
+
   componentDidUpdate() {
+    let client = this.state.selectedClient;
+    console.log(client);
     // console.log(this.state.selectedClient);
     //should I get all data when the page loads or upon request after each click?
   }
   //Current goal here to map through an array of clients. This should render an individual card per name. These cards should have a click function attached to each that will allow the case manager to get information specifically tied to client they clicked on.
   render() {
+    // const checkInData = clients.checkIns.map(checkIn => {
+    //   <li>{checkIn}</li>;
+    // });
     return (
       <div>
         <div className="row">
@@ -47,11 +57,14 @@ class ClientList extends Component {
             <div id="border" className="card">
               <ul id="listBackdrop" className="list-group list-group-flush">
                 {this.state.clients.map(clients => {
+                  // console.log(clients);
                   return (
                     <NameCard
-                      id={clients.id}
-                      key={clients.id}
-                      name={clients.name}
+                      id={clients.client.id}
+                      key={clients.client.id}
+                      name={clients.client.name}
+                      phone={clients.client.phone}
+                      checkIns={clients.client.checkIns}
                       handleClick={this.handleClick}
                     />
                   );
@@ -69,18 +82,47 @@ class ClientList extends Component {
                 </div>
               </div>
 
-              <div className="row" style={{ alignItems: 'center' }}>
+              <div
+                className="row"
+                style={{ textAlign: 'left', marginLeft: '50px' }}
+              >
                 <div className="col-md-6">
-                  <div className="card">
-                    <h5>ID: {this.state.selectedClient.id}</h5>
-                    <h5>Name: {this.state.selectedClient.name}</h5>
-                  </div>
+                  <h5>ID: {this.state.selectedClient.id}</h5>
+                  <h5>Name: {this.state.selectedClient.name}</h5>
+                  <h5>Phone: {this.state.selectedClient.phone}</h5>
+                  <h5>Court Dates: </h5>
                 </div>
 
                 <div className="col-md-6">
-                  <div className="card">
-                    <h5>ID: {this.state.selectedClient.id}</h5>
-                    <h5>Name: {this.state.selectedClient.name}</h5>
+                  <div className="row">
+                    <div className="col-md-12">
+                      <h4
+                        style={{
+                          textAlign: 'center',
+                          textDecoration: 'underline'
+                        }}
+                      >
+                        Pretrial Check Ins
+                      </h4>
+                    </div>
+                  </div>
+
+                  <div className="row">
+                    <div className="col-md-12">
+                      <ul>
+                        {this.state.checkIns.map(checkIn => {
+                          // console.log(clients);
+                          return (
+                            <CheckIn
+                              id={checkIn.id}
+                              key={checkIn.id}
+                              checkIns={checkIn}
+                              handleSelectCheckIn={this.handleSelectCheckIn}
+                            />
+                          );
+                        })}
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -5,7 +5,9 @@ const NameCard = props => {
     <li
       className="list-group-item"
       id={props.id}
-      onClick={() => props.handleClick(props.id, props.name)}
+      onClick={() =>
+        props.handleClick(props.id, props.name, props.phone, props.checkIns)
+      }
     >
       <a href="#">{props.name}</a>
     </li>

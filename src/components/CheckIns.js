@@ -1,0 +1,15 @@
+import React from 'react';
+import './clientList.css';
+const CheckIn = props => {
+  return (
+    <li
+      id={props.id}
+      key={props.id}
+      onClick={() => props.handleClick(props.id)}
+    >
+      <a href="#">{props.checkIn}</a>
+    </li>
+  );
+};
+
+export default CheckIn;

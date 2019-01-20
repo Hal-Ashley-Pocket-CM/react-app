@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import { clients } from '../fakeData';
+import { clients, convoData } from '../fakeData';
 import NameCard from './NameCard';
 class ClientConnect extends Component {
   constructor(props) {
     super(props);
     this.state = {
       clients: clients,
+      convoData: convoData,
       text: '',
       id: 0,
+      phone: '',
       name: '', //client name
       caseManager: '', //case manager name
       messages: [], // this will be an array of objects including dates/times/message strings
@@ -23,8 +25,10 @@ class ClientConnect extends Component {
     console.log("I'm going to be an API that hits court dates ");
   }
 
-  handleClick = (id, name) => {
-    console.log('clicked: ', id, name);
+  handleClick = (id, name, phone) => {
+    console.log('clicked: ', id, name, phone);
+    // let phone = this.clients.phone;
+    this.setState({ selectedClient: { name: name, id: id, phone: phone } });
   };
   handleChange = event => {
     this.setState({ text: event.target.value });
@@ -45,16 +49,23 @@ class ClientConnect extends Component {
         <div className="row">
           <div
             className="col-md-2"
-            style={{ textAlign: 'left', marginTop: '15px', marginLeft: '15px' }}
+            style={{
+              textAlign: 'left',
+              padding: '5px',
+              marginTop: '15px',
+              marginLeft: '15px',
+              backgroundColor: 'darkgray'
+            }}
           >
-            <div className="card">
+            <div id="clientButtons" className="card">
               <ul id="listBackdrop" className="list-group list-group-flush">
                 {this.state.clients.map(clients => {
                   return (
                     <NameCard
-                      id={clients.id}
-                      key={clients.id}
-                      name={clients.name}
+                      id={clients.client.id}
+                      key={clients.client.id}
+                      name={clients.client.name}
+                      phone={clients.client.phone}
                       handleClick={this.handleClick}
                     />
                   );
@@ -88,9 +99,19 @@ class ClientConnect extends Component {
                 </div>
               </div>
 
-              <div className="row">
+              <div id="" className="row">
                 <div className="col-md-12">
-                  <div>{this.state.convoData}</div>
+                  <div style={{ textAlign: 'left', marginLeft: '10px' }}>
+                    <h4>{this.state.selectedClient.name}</h4>
+                    <h4>{this.state.selectedClient.phone}</h4>
+                  </div>
+                </div>
+              </div>
+
+              <div id="convoLocation" className="row">
+                <div className="col-md-2" />
+                <div className="col-md-8">
+                  <div>{convoData}</div>
                 </div>
               </div>
 
