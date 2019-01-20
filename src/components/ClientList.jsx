@@ -45,9 +45,6 @@ class ClientList extends Component {
   }
   //Current goal here to map through an array of clients. This should render an individual card per name. These cards should have a click function attached to each that will allow the case manager to get information specifically tied to client they clicked on.
   render() {
-    // const checkInData = clients.checkIns.map(checkIn => {
-    //   <li>{checkIn}</li>;
-    // });
     return (
       <div>
         <div className="row">
@@ -110,19 +107,20 @@ class ClientList extends Component {
 
                   <div className="row">
                     <div className="col-md-12">
-                      {/* <ul>
+                      <ul>
                         {this.state.selectedClient.checkIns.map(checkIn => {
-                          // console.log(checkIn);
-                          return (
-                            <CheckIn
-                              id={checkIn.id}
-                              key={checkIn.id}
-                              checkIn={checkIn}
-                              handleSelectCheckIn={this.handleSelectCheckIn}
-                            />
-                          );
+                          console.log(checkIn);
+                          // return (
+                          //   <CheckIn
+                          //     id={checkIn.id}
+                          //     key={checkIn.id}
+                          //     lattitude={checkIn.lattitude}
+                          //     longitude={checkIn.longitude}
+                          //     handleSelectCheckIn={this.handleSelectCheckIn}
+                          //   />
+                          // );
                         })}
-                      </ul> */}
+                      </ul>
                     </div>
                   </div>
                 </div>

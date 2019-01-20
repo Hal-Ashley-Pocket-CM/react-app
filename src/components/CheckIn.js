@@ -5,9 +5,13 @@ const CheckIn = props => {
     <li
       id={props.id}
       key={props.id}
-      onClick={() => props.handleSelectCheckIn(props.id)}
+      onClick={() =>
+        props.handleSelectCheckIn(props.id, props.lattitude, props.longitude)
+      }
     >
-      <a href="#">{props.checkIn}</a>
+      <a href="#">
+        {props.lattitude},{props.longitude}
+      </a>
     </li>
   );
 };
