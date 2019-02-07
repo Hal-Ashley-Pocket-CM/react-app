@@ -23,3 +23,17 @@ To view each page type the route in
 Trouble getting my checkIns to display on dash
 I think what is happening is that when there is no client selected it doesn't know what to do and breaks
 I am not currently starting with a cleint selected. I could try to do that and see if there is any change
+
+
+Original server scripts
+  // "scripts": {
+  //   "start": "react-scripts start",
+  //   "build": "react-scripts build",
+  //   "test": "react-scripts test",
+  //   "eject": "react-scripts eject"
+  // },
+
+  // "scripts": {
+  //   "test": "echo \"Error: no test specified\" && exit 1",
+  //   "start": "node server.js"
+  // },

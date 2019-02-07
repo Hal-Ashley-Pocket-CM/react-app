@@ -8,25 +8,57 @@ class ClientList extends Component {
     super(props);
     this.state = {
       clients: clients,
+      // selectedClient: {
+      //   id: '',
+      //   name: '',
+      //   phone: '',
+      //   checkIns: ['None Yet']
+      // },
       selectedClient: {},
       id: 0,
       name: '',
       phone: '',
       checkIns: [],
-      checkIn: {},
+      // checkIn: {},
       courtDates: []
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleSelectCheckIn = this.handleSelectCheckIn.bind(this);
     // this.displayData = this.displayData.bind(this);
+
+    const sortedClients = []
+      .concat(this.state.clients)
+      .sort((a, b) => a.itemM > b.itemM);
   }
   componentDidMount() {
     console.log("i'm loaded here");
+
+    const sortedClients = []
+      .concat(this.state.clients)
+      .sort((a, b) => a.client.name > b.itemM);
+    console.log(sortedClients);
+    // .map((item, i) => (
+    //   <div key={i}>
+    //     {' '}
+    //     {item.matchID} {item.timeM}
+    //     {item.description}
+    //   </div>
+    // ));
+
+    var obj = [...this.state.clients];
+    obj.sort((a, b) => a.timeM - b.timeM);
+    obj.map((item, i) => (
+      <div key={i}>
+        {' '}
+        {item.matchID}
+        {item.timeM} {item.description}
+      </div>
+    ));
   }
 
-  handleSelectCheckIn = id => {
-    console.log(this.state.id);
-    console.log(this.state.checkIn);
+  handleSelectCheckIn = (id, checkIn) => {
+    console.log(id);
+    console.log(checkIn);
   };
 
   handleClick = (id, name, phone, checkIns) => {
@@ -34,12 +66,11 @@ class ClientList extends Component {
     this.setState({
       selectedClient: { id: id, name: name, phone: phone, checkIns: checkIns }
     });
-    // let client = this.state.selectedClient;
   };
 
   componentDidUpdate() {
     let client = this.state.selectedClient;
-    console.log(client);
+    // console.log(client);
   }
   //Current goal here to map through an array of clients. This should render an individual card per name. These cards should have a click function attached to each that will allow the case manager to get information specifically tied to client they clicked on.
   render() {
@@ -50,10 +81,10 @@ class ClientList extends Component {
             className="col-md-2"
             style={{ textAlign: 'left', marginTop: '15px', marginLeft: '15px' }}
           >
+            <h1>My Clients</h1>
             <div id="border" className="card">
               <ul id="listBackdrop" className="list-group list-group-flush">
                 {this.state.clients.map(clients => {
-                  // console.log(clients);
                   return (
                     <NameCard
                       id={clients.client.id}
@@ -83,7 +114,14 @@ class ClientList extends Component {
                 style={{ textAlign: 'left', marginLeft: '50px' }}
               >
                 <div className="col-md-6">
-                  <h5>ID: {this.state.selectedClient.id}</h5>
+                  <h4
+                    style={{
+                      textAlign: 'left'
+                    }}
+                  >
+                    Client
+                  </h4>
+                  <h5>Client e-track #: {this.state.selectedClient.id}</h5>
                   <h5>Name: {this.state.selectedClient.name}</h5>
                   <h5>Phone: {this.state.selectedClient.phone}</h5>
                   <h5>Court Dates: </h5>
@@ -91,34 +129,41 @@ class ClientList extends Component {
 
                 <div className="col-md-6">
                   <div className="row">
-                    <div className="col-md-12">
-                      <h4
-                        style={{
-                          textAlign: 'center',
-                          textDecoration: 'underline'
-                        }}
-                      >
-                        Pretrial Check Ins
-                      </h4>
+                    <div
+                      className="col-md-12"
+                      style={{
+                        textAlign: 'left'
+                      }}
+                    >
+                      <div className="row">
+                        <h4>Pretrial</h4>
+                        <img
+                          style={{ width: '10%', height: '10%' }}
+                          src="../Location_Tag_Point-512.png"
+                          alt="Check-in Image"
+                        />
+                      </div>
                     </div>
                   </div>
 
                   <div className="row">
                     <div className="col-md-12">
-                      {/* <ul>
-                        {this.state.selectedClient.checkIns.map(checkIn => {
-                          console.log(checkIn);
-                          return (
-                            <CheckIn
-                              id={checkIn.id}
-                              key={checkIn.id}
-                              lattitude={checkIn.lattitude}
-                              longitude={checkIn.longitude}
-                              handleSelectCheckIn={this.handleSelectCheckIn}
-                            />
-                          );
-                        })}
-                      </ul> */}
+                      <ul style={{ listStyleType: 'none', textAlign: 'left' }}>
+                        {this.state.selectedClient.checkIns ? (
+                          this.state.selectedClient.checkIns.map(checkIn => {
+                            return (
+                              <CheckIn
+                                id={checkIn.id}
+                                key={checkIn.id}
+                                checkIn={checkIn}
+                                handleSelectCheckIn={this.handleSelectCheckIn}
+                              />
+                            );
+                          })
+                        ) : (
+                          <p />
+                        )}
+                      </ul>
                     </div>
                   </div>
                 </div>

@@ -5,6 +5,7 @@ const NameCard = props => {
     <li
       className="list-group-item"
       id={props.id}
+      key={props.id}
       onClick={() =>
         props.handleClick(props.id, props.name, props.phone, props.checkIns)
       }
