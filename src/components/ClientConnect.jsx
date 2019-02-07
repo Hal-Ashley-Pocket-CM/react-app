@@ -7,7 +7,7 @@ class ClientConnect extends Component {
     super(props);
     this.state = {
       clients: clients,
-      convoData: convoData,
+      convoData: [],
       text: '',
       id: 0,
       phone: '',
@@ -23,13 +23,15 @@ class ClientConnect extends Component {
     this.handleSubmitLater = this.handleSubmitLater.bind(this);
   }
   componentDidMount() {
-    console.log("I'm going to be an API that hits court dates ");
+    console.log('API that gets court dates');
   }
 
-  handleClick = (id, name, phone) => {
+  handleClick = (id, name, phone, messages) => {
     console.log('clicked: ', id, name, phone);
     // let phone = this.clients.phone;
-    this.setState({ selectedClient: { name: name, id: id, phone: phone } });
+    this.setState({
+      selectedClient: { name: name, id: id, phone: phone }
+    });
   };
   handleChange = event => {
     this.setState({ text: event.target.value });
@@ -56,6 +58,7 @@ class ClientConnect extends Component {
               marginLeft: '15px'
             }}
           >
+            <h1>My Clients</h1>
             <div id="clientButtons" className="card">
               <ul id="listBackdrop" className="list-group list-group-flush">
                 {this.state.clients.map(clients => {
@@ -78,7 +81,7 @@ class ClientConnect extends Component {
           <div
             id="messagesBox"
             className="col-md-8"
-            style={{ marginTop: '15px' }}
+            style={{ marginTop: '5%' }}
           >
             <div className="card">
               <div className="row">
@@ -116,7 +119,7 @@ class ClientConnect extends Component {
               <div id="convoLocation" className="row">
                 <div className="col-md-2" />
                 <div className="col-md-8">
-                  <div>{convoData}</div>
+                  <div>{this.state.convoData}</div>
                 </div>
               </div>
 

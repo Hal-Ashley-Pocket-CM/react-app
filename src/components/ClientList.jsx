@@ -63,6 +63,7 @@ class ClientList extends Component {
 
   handleClick = (id, name, phone, checkIns) => {
     // add checkins the array of objects to this selected Client object. Then display the array of checkins showing each check in as a list item
+    // instead of adding checkins to this object we could go and get them using an api call
     this.setState({
       selectedClient: { id: id, name: name, phone: phone, checkIns: checkIns }
     });
@@ -107,7 +108,7 @@ class ClientList extends Component {
             </div>
           </div> */}
 
-          <div id="fluidBox" className="col-md-8" style={{ marginTop: '10%' }}>
+          <div id="fluidBox" className="col-md-8" style={{ marginTop: '5%' }}>
             <div className="card">
               {/* <div className="row">
                 <div className="col-md-12">
@@ -127,7 +128,9 @@ class ClientList extends Component {
                   >
                     Client
                   </h3>
-                  <h5>Client e-track #: {this.state.selectedClient.id}</h5>
+                  <h5 style={{ marginTop: '3%' }}>
+                    Client e-track #: {this.state.selectedClient.id}
+                  </h5>
                   <h5>Name: {this.state.selectedClient.name}</h5>
                   <h5>Phone: {this.state.selectedClient.phone}</h5>
                   <h5>Court Dates: </h5>
@@ -154,7 +157,13 @@ class ClientList extends Component {
 
                   <div className="row">
                     <div className="col-md-12">
-                      <ul style={{ listStyleType: 'none', textAlign: 'left' }}>
+                      <ul
+                        style={{
+                          listStyleType: 'none',
+                          textAlign: 'left',
+                          marginTop: '3%'
+                        }}
+                      >
                         {this.state.selectedClient.checkIns ? (
                           this.state.selectedClient.checkIns.map(checkIn => {
                             return (
