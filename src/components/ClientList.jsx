@@ -101,26 +101,32 @@ class ClientList extends Component {
           </div>
           <div className="col-md-1" />
 
-          <div id="fluidBox" className="col-md-8" style={{ marginTop: '15px' }}>
+          {/* <div className="row">
+            <div className="col-md-12">
+              <h1 style={{ textAlign: 'center' }}>Client Information</h1>
+            </div>
+          </div> */}
+
+          <div id="fluidBox" className="col-md-8" style={{ marginTop: '10%' }}>
             <div className="card">
-              <div className="row">
+              {/* <div className="row">
                 <div className="col-md-12">
                   <h1 style={{ textAlign: 'center' }}>Client Information</h1>
                 </div>
-              </div>
+              </div> */}
 
               <div
                 className="row"
-                style={{ textAlign: 'left', marginLeft: '50px' }}
+                style={{ textAlign: 'left', marginLeft: '10%' }}
               >
                 <div className="col-md-6">
-                  <h4
+                  <h3
                     style={{
-                      textAlign: 'left'
+                      textAlign: 'center'
                     }}
                   >
                     Client
-                  </h4>
+                  </h3>
                   <h5>Client e-track #: {this.state.selectedClient.id}</h5>
                   <h5>Name: {this.state.selectedClient.name}</h5>
                   <h5>Phone: {this.state.selectedClient.phone}</h5>
@@ -135,8 +141,8 @@ class ClientList extends Component {
                         textAlign: 'left'
                       }}
                     >
-                      <div className="row">
-                        <h4>Pretrial</h4>
+                      <div className="row" style={{ textAlign: 'center' }}>
+                        <h3>Pretrial</h3>
                         <img
                           style={{ width: '10%', height: '10%' }}
                           src="../Location_Tag_Point-512.png"
@@ -171,6 +177,7 @@ class ClientList extends Component {
             </div>
           </div>
         </div>
+        <br />
       </div>
     );
   }

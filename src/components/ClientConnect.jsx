@@ -163,6 +163,7 @@ class ClientConnect extends Component {
             </div>
           </div>
         </div>
+        <br />
       </div>
     );
   }
