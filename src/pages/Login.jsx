@@ -39,10 +39,14 @@ class Login extends Component {
           <div className="col-md-4">
             <div
               className="card dark bg-dark"
-              style={{ textAlign: 'center', marginTop: '50%' }}
+              style={{ textAlign: 'center', marginTop: '40%' }}
             >
-              <h3 style={{ color: 'white' }}>Welcome to PCM</h3>
-              <h6 style={{ color: 'white' }}>Lets get started</h6>
+              <h3 style={{ color: 'white', textShadow: '2px 2px 4px #000000' }}>
+                Welcome to PCM
+              </h3>
+              <h6 style={{ color: 'white', textShadow: '2px 2px 4px #000000' }}>
+                Lets get started
+              </h6>
               <form
                 onSubmit={this.handleSubmit}
                 style={{ textAlign: 'left', margin: '25px' }}
@@ -99,7 +103,7 @@ class Login extends Component {
           <div className="col-md-4" />
         </div>
 
-        <Footer />
+        {/* <Footer /> */}
       </div>
     );
   }

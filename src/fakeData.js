@@ -6,18 +6,7 @@ const clients = [
       id: 1,
       name: 'Bob Marley',
       phone: '702-555-5656',
-      checkIns: [
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' }
-      ]
+      checkIns: []
     }
   },
   {
@@ -26,16 +15,16 @@ const clients = [
       name: 'Harry Potter',
       phone: '555-888-4444',
       checkIns: [
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' }
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long'
       ]
     }
   },
@@ -45,16 +34,16 @@ const clients = [
       name: 'Hermoine Granger',
       phone: '565-454-8888',
       checkIns: [
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' }
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long'
       ]
     }
   },
@@ -64,16 +53,16 @@ const clients = [
       name: 'Jon Snow',
       phone: '555-888-7777',
       checkIns: [
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' }
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long'
       ]
     }
   },
@@ -83,16 +72,16 @@ const clients = [
       name: 'Larry H. Miller',
       phone: '666-888-8585',
       checkIns: [
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' }
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long'
       ]
     }
   },
@@ -102,16 +91,16 @@ const clients = [
       name: 'Rob Stark',
       phone: '699-969-6699',
       checkIns: [
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' }
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long'
       ]
     }
   },
@@ -121,16 +110,16 @@ const clients = [
       name: 'Vivian Ward',
       phone: '565-999-9696',
       checkIns: [
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' }
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long'
       ]
     }
   },
@@ -140,16 +129,16 @@ const clients = [
       name: 'Steve Jobs',
       phone: '444-555-5656',
       checkIns: [
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' }
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long'
       ]
     }
   },
@@ -159,16 +148,16 @@ const clients = [
       name: 'Jacob Henderson',
       phone: '699-696-9969',
       checkIns: [
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' }
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long'
       ]
     }
   },
@@ -178,16 +167,16 @@ const clients = [
       name: 'Cortney Horn',
       phone: '999-666-3333',
       checkIns: [
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' }
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long'
       ]
     }
   },
@@ -197,16 +186,16 @@ const clients = [
       name: 'John Jacob Jingelheimer Schmit',
       phone: '787-999-5555',
       checkIns: [
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' }
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long'
       ]
     }
   },
@@ -216,16 +205,16 @@ const clients = [
       name: 'Steve Rogers',
       phone: '454-898-5555',
       checkIns: [
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' }
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long'
       ]
     }
   },
@@ -235,16 +224,16 @@ const clients = [
       name: 'Edward Lewis',
       phone: '902-867-5309',
       checkIns: [
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' }
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long'
       ]
     }
   },
@@ -254,16 +243,16 @@ const clients = [
       name: 'Kanye West',
       phone: '232-565-5555',
       checkIns: [
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' }
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long'
       ]
     }
   },
@@ -273,16 +262,16 @@ const clients = [
       name: 'Taylor Swift',
       phone: '898-222-3366',
       checkIns: [
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' }
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long'
       ]
     }
   },
@@ -292,16 +281,16 @@ const clients = [
       name: 'Reba Mcintyre',
       phone: '454-666-9999',
       checkIns: [
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' },
-        { lattitude: 'lat', longitude: 'lng' }
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long'
       ]
     }
   },
@@ -311,12 +300,16 @@ const clients = [
       name: 'Bill Murrey',
       phone: '555-666-4444',
       checkIns: [
-        { checkIn: { lattitude: 'lat', longitude: 'lng' } },
-        { checkIn: { lattitude: 'lat', longitude: 'lng' } },
-        { checkIn: { lattitude: 'lat', longitude: 'lng' } },
-        { checkIn: { lattitude: 'lat', longitude: 'lng' } },
-        { checkIn: { lattitude: 'lat', longitude: 'lng' } },
-        { checkIn: { lattitude: 'lat', longitude: 'lng' } }
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long',
+        'lat, long'
       ]
     }
   }
