@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Nav from '../components/Navbar';
 import ClientList from '../components/ClientList';
 import './login.css';
-import Footer from '../components/Footer';
+// import Footer from '../components/Footer';
 class Dashboard extends Component {
   constructor(props) {
     super(props);

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { clients, convoData } from '../fakeData';
 import NameCard from './NameCard';
 import MassMessage from './MassMessage';
+import CalendarModal from './CalendarModal';
+
 class ClientConnect extends Component {
   constructor(props) {
     super(props);
@@ -15,10 +17,13 @@ class ClientConnect extends Component {
       caseManager: '', //case manager name
       messages: [], // this will be an array of objects including dates/times/message strings
       selectedClient: {},
-      convoData: []
+      convoData: [],
+      startDate: new Date()
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleDateChange = this.handleDateChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleSubmitNow = this.handleSubmitNow.bind(this);
     this.handleSubmitLater = this.handleSubmitLater.bind(this);
   }
@@ -36,20 +41,37 @@ class ClientConnect extends Component {
   handleChange = event => {
     this.setState({ text: event.target.value });
   };
+  handleDateChange(date) {
+    this.setState({
+      startDate: date
+    });
+  }
+  handleSubmit(e) {
+    e.preventDefault();
+    let main = this.state.startDate;
+    console.log(main.format('L'));
+  }
 
   handleSubmitNow = text => {
     console.log('handle submit now selected');
-    console.log(this.state.text);
+    if (this.state.text) {
+      console.log(this.state.text);
+    }
+    this.setState({ text: '' });
   };
   handleSubmitLater = text => {
     console.log('handle submit later selected');
-    console.log(this.state.text);
+    if (this.state.text) {
+      console.log(this.state.text);
+    }
+    this.setState({ text: '' });
   };
   //Current goal here to map through an array of clients. This should render an individual card per name. These cards should have a click function attached to each that will allow the case manager to get information specifically tied to client they clicked on.
   render() {
     return (
       <div>
         <MassMessage />
+        <CalendarModal />
         <div className="row">
           <div
             className="col-md-2"
@@ -127,6 +149,7 @@ class ClientConnect extends Component {
                 <div className="col-md-12">
                   <div className="input-group">
                     <textarea
+                      id="message"
                       type="text"
                       className="form-control font-weight-bold text-wrap"
                       aria-label="Start typing here..."
@@ -153,6 +176,8 @@ class ClientConnect extends Component {
                         </a>
                         <a
                           className="dropdown-item"
+                          data-toggle="modal"
+                          data-target="#calendarModal"
                           href="#"
                           onClick={this.handleSubmitLater}
                         >

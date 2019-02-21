@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import NavLogin from '../components/NavLogin';
 import './login.css';
-import Footer from '../components/Footer';
+// import Footer from '../components/Footer';
 class Login extends Component {
   constructor(props) {
     super(props);
