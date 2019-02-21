@@ -1,11 +1,11 @@
 import React from 'react';
 import { clients } from '../fakeData';
-import CalendarModal from './CalendarModal';
+// import CalendarModal from './CalendarModal';
 //In this file the goal is to get all clients and allow the user to select some or all of the clients to send this mass message to.
 const MassMessage = props => {
   return (
     <div>
-      <CalendarModal />
+      {/* <CalendarModal /> */}
       <div
         className="modal fade"
         id="exampleModal"

@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { clients, convoData } from '../fakeData';
 import NameCard from './NameCard';
 import MassMessage from './MassMessage';
-import CalendarModal from './CalendarModal';
-
+// import CalendarModal from './CalendarModal';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 class ClientConnect extends Component {
   constructor(props) {
     super(props);
@@ -49,7 +50,9 @@ class ClientConnect extends Component {
   handleSubmit(e) {
     e.preventDefault();
     let main = this.state.startDate;
-    console.log(main.format('L'));
+    // console.log(main.format('L'));
+    console.log('Send message on this date and time: ', main);
+    alert('Your message was scheduled!');
   }
 
   handleSubmitNow = text => {
@@ -71,7 +74,7 @@ class ClientConnect extends Component {
     return (
       <div>
         <MassMessage />
-        <CalendarModal />
+        {/* <CalendarModal /> */}
         <div className="row">
           <div
             className="col-md-2"
@@ -187,6 +190,58 @@ class ClientConnect extends Component {
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="modal fade"
+          id="calendarModal"
+          tabIndex="-1"
+          role="dialog"
+          aria-labelledby="calendarModalLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="calendarModalLabel">
+                  Select a Date & Time for sending
+                </h5>
+                <button
+                  type="button"
+                  className="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <form onSubmit={this.handleSubmit}>
+                  {/* <label>Send Message: </label> */}
+                  <DatePicker
+                    // openToDate={new Date()}
+                    selected={this.state.startDate}
+                    onChange={this.handleDateChange}
+                    showTimeSelect
+                    // dateFormat="MMMM d, yyyy h:mm aa"
+                    dateFormat="Pp"
+                    name="sendDate"
+                  />
+
+                  <div className="form-group">
+                    <button
+                      type="submit"
+                      className="btn btn-success"
+                      aria-label="Close"
+                      data-toggle="modal"
+                      data-target="#calendarModal"
+                    >
+                      Schedule Message
+                    </button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
