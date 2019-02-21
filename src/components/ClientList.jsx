@@ -8,19 +8,7 @@ class ClientList extends Component {
     super(props);
     this.state = {
       clients: clients,
-      // selectedClient: {
-      //   id: '',
-      //   name: '',
-      //   phone: '',
-      //   checkIns: ['None Yet']
-      // },
-      selectedClient: {},
-      id: 0,
-      name: '',
-      phone: '',
-      checkIns: [],
-      // checkIn: {},
-      courtDates: []
+      selectedClient: {}
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleSelectCheckIn = this.handleSelectCheckIn.bind(this);
@@ -61,11 +49,17 @@ class ClientList extends Component {
     console.log(checkIn);
   };
 
-  handleClick = (id, name, phone, checkIns) => {
+  handleClick = (id, name, phone, courtDates, checkIns) => {
     // add checkins the array of objects to this selected Client object. Then display the array of checkins showing each check in as a list item
     // instead of adding checkins to this object we could go and get them using an api call
     this.setState({
-      selectedClient: { id: id, name: name, phone: phone, checkIns: checkIns }
+      selectedClient: {
+        id: id,
+        name: name,
+        phone: phone,
+        courtDates: courtDates,
+        checkIns: checkIns
+      }
     });
   };
 
@@ -92,6 +86,7 @@ class ClientList extends Component {
                       key={clients.client.id}
                       name={clients.client.name}
                       phone={clients.client.phone}
+                      courtDates={clients.client.courtDates}
                       checkIns={clients.client.checkIns}
                       handleClick={this.handleClick}
                     />
@@ -133,7 +128,7 @@ class ClientList extends Component {
                   </h5>
                   <h5>Name: {this.state.selectedClient.name}</h5>
                   <h5>Phone: {this.state.selectedClient.phone}</h5>
-                  <h5>Court Dates: </h5>
+                  <h5>Court Dates: {this.state.selectedClient.courtDates}</h5>
                 </div>
 
                 <div className="col-md-6">

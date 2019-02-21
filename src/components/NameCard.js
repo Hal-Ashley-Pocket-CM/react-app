@@ -7,7 +7,13 @@ const NameCard = props => {
       id={props.id}
       key={props.id}
       onClick={() =>
-        props.handleClick(props.id, props.name, props.phone, props.checkIns)
+        props.handleClick(
+          props.id,
+          props.name,
+          props.phone,
+          props.courtDates,
+          props.checkIns
+        )
       }
     >
       <a href="#">{props.name}</a>

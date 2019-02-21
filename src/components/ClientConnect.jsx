@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { clients, convoData } from '../fakeData';
 import NameCard from './NameCard';
 import MassMessage from './MassMessage';
+// import CalendarModal from './CalendarModal';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 class ClientConnect extends Component {
   constructor(props) {
     super(props);
@@ -15,10 +18,13 @@ class ClientConnect extends Component {
       caseManager: '', //case manager name
       messages: [], // this will be an array of objects including dates/times/message strings
       selectedClient: {},
-      convoData: []
+      convoData: [],
+      startDate: new Date()
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleDateChange = this.handleDateChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleSubmitNow = this.handleSubmitNow.bind(this);
     this.handleSubmitLater = this.handleSubmitLater.bind(this);
   }
@@ -36,20 +42,39 @@ class ClientConnect extends Component {
   handleChange = event => {
     this.setState({ text: event.target.value });
   };
+  handleDateChange(date) {
+    this.setState({
+      startDate: date
+    });
+  }
+  handleSubmit(e) {
+    e.preventDefault();
+    let main = this.state.startDate;
+    // console.log(main.format('L'));
+    console.log('Send message on this date and time: ', main);
+    alert('Your message was scheduled!');
+  }
 
   handleSubmitNow = text => {
     console.log('handle submit now selected');
-    console.log(this.state.text);
+    if (this.state.text) {
+      console.log(this.state.text);
+    }
+    this.setState({ text: '' });
   };
   handleSubmitLater = text => {
     console.log('handle submit later selected');
-    console.log(this.state.text);
+    if (this.state.text) {
+      console.log(this.state.text);
+    }
+    this.setState({ text: '' });
   };
   //Current goal here to map through an array of clients. This should render an individual card per name. These cards should have a click function attached to each that will allow the case manager to get information specifically tied to client they clicked on.
   render() {
     return (
       <div>
         <MassMessage />
+        {/* <CalendarModal /> */}
         <div className="row">
           <div
             className="col-md-2"
@@ -127,6 +152,7 @@ class ClientConnect extends Component {
                 <div className="col-md-12">
                   <div className="input-group">
                     <textarea
+                      id="message"
                       type="text"
                       className="form-control font-weight-bold text-wrap"
                       aria-label="Start typing here..."
@@ -153,6 +179,8 @@ class ClientConnect extends Component {
                         </a>
                         <a
                           className="dropdown-item"
+                          data-toggle="modal"
+                          data-target="#calendarModal"
                           href="#"
                           onClick={this.handleSubmitLater}
                         >
@@ -162,6 +190,58 @@ class ClientConnect extends Component {
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="modal fade"
+          id="calendarModal"
+          tabIndex="-1"
+          role="dialog"
+          aria-labelledby="calendarModalLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="calendarModalLabel">
+                  Select a Date & Time for sending
+                </h5>
+                <button
+                  type="button"
+                  className="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <form onSubmit={this.handleSubmit}>
+                  {/* <label>Send Message: </label> */}
+                  <DatePicker
+                    // openToDate={new Date()}
+                    selected={this.state.startDate}
+                    onChange={this.handleDateChange}
+                    showTimeSelect
+                    // dateFormat="MMMM d, yyyy h:mm aa"
+                    dateFormat="Pp"
+                    name="sendDate"
+                  />
+
+                  <div className="form-group">
+                    <button
+                      type="submit"
+                      className="btn btn-success"
+                      aria-label="Close"
+                      data-toggle="modal"
+                      data-target="#calendarModal"
+                    >
+                      Schedule Message
+                    </button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
