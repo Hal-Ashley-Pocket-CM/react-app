@@ -21,6 +21,7 @@ class ClientConnect extends Component {
       convoData: [],
       startDate: new Date()
     };
+    this.handleRefresh = this.handleRefresh.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleDateChange = this.handleDateChange.bind(this);
@@ -31,6 +32,11 @@ class ClientConnect extends Component {
   componentDidMount() {
     console.log('API that gets court dates');
   }
+  handleRefresh = () => {
+    console.log(
+      'refresh button clicked, hit api and refresh message data here!'
+    );
+  };
 
   handleClick = (id, name, phone, messages) => {
     console.log('clicked: ', id, name, phone);
@@ -191,6 +197,13 @@ class ClientConnect extends Component {
                           Send Later
                         </a>
                       </div>
+                      <button
+                        onClick={this.handleRefresh}
+                        className="btn btn-outline-success"
+                        type="button"
+                      >
+                        Refresh
+                      </button>
                     </div>
                   </div>
                 </div>
