@@ -102,8 +102,6 @@ class Login extends Component {
           </div>
           <div className="col-md-4" />
         </div>
-
-        {/* <Footer /> */}
       </div>
     );
   }
