@@ -90,8 +90,14 @@ class MassMessage extends Component {
                         <label style={{ marginLeft: '12px' }}>Select All</label>
                       </div>
                     </div>
-                    {clients.map(clients => {
-                      return (
+                    {clients
+                      .sort((a, b) =>
+                        a.client.name.localeCompare(b.client.name)
+                      )
+                      .map((clients, i) => (
+                        /* {clients.map(clients => {
+                      return ( */
+
                         <div className="input-group mb-3">
                           <div className="input-group-prepend">
                             <div className="input-group-text">
@@ -102,11 +108,9 @@ class MassMessage extends Component {
                             </div>
                           </div>
 
-                          {/* this is where I want to map all clients and allow the user to select some or all clients to send a message to. */}
-
                           <p
-                            id={clients.client.id}
-                            key={clients.client.id}
+                            id={i}
+                            key={i}
                             name={clients.client.name}
                             phone={clients.client.phone}
                             className="form-control"
@@ -114,8 +118,7 @@ class MassMessage extends Component {
                             {clients.client.name}
                           </p>
                         </div>
-                      );
-                    })}
+                      ))}
                   </div>
 
                   <div className="form-group">
