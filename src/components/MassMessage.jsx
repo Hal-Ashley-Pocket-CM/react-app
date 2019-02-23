@@ -117,11 +117,6 @@ class MassMessage extends Component {
                       );
                     })}
                   </div>
-                  {/* <input
-                    type="text"
-                    className="form-control"
-                    aria-label="Text input with checkbox"
-                  /> */}
 
                   <div className="form-group">
                     <label htmlFor="message-text" className="col-form-label">

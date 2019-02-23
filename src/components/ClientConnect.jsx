@@ -86,17 +86,19 @@ class ClientConnect extends Component {
             <h1>My Clients</h1>
             <div id="clientButtons" className="card">
               <ul id="listBackdrop" className="list-group list-group-flush">
-                {this.state.clients.map(clients => {
-                  return (
+                {this.state.clients
+                  .sort((a, b) => a.client.name.localeCompare(b.client.name))
+                  .map((item, i) => (
                     <NameCard
-                      id={clients.client.id}
-                      key={clients.client.id}
-                      name={clients.client.name}
-                      phone={clients.client.phone}
+                      id={i}
+                      key={i}
+                      name={item.client.name}
+                      phone={item.client.phone}
+                      courtDates={item.client.courtDates}
+                      checkIns={item.client.checkIns}
                       handleClick={this.handleClick}
                     />
-                  );
-                })}
+                  ))}
               </ul>
             </div>
           </div>

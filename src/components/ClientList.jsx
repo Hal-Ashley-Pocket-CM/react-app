@@ -14,34 +14,37 @@ class ClientList extends Component {
     this.handleSelectCheckIn = this.handleSelectCheckIn.bind(this);
     // this.displayData = this.displayData.bind(this);
 
-    const sortedClients = []
-      .concat(this.state.clients)
-      .sort((a, b) => a.itemM > b.itemM);
+    // const sortedClients = []
+    //   .concat(this.state.clients)
+    //   .sort((a, b) => a.itemM > b.itemM);
   }
   componentDidMount() {
     console.log("i'm loaded here");
 
-    const sortedClients = []
-      .concat(this.state.clients)
-      .sort((a, b) => a.client.name > b.itemM);
-    console.log(sortedClients);
-    // .map((item, i) => (
+    const myData = this.state.clients
+      .sort((a, b) => a.client.name.localeCompare(b.client.name))
+      .map((item, i) => (
+        <NameCard
+          id={i}
+          key={i}
+          name={item.client.name}
+          phone={item.client.phone}
+          courtDates={item.client.courtDates}
+          checkIns={item.client.checkIns}
+          // handleClick={this.handleClick}
+        />
+      ));
+    console.log(myData);
+
+    // var obj = [...this.state.clients];
+    // obj.sort((a, b) => a.timeM - b.timeM);
+    // obj.map((item, i) => (
     //   <div key={i}>
     //     {' '}
-    //     {item.matchID} {item.timeM}
-    //     {item.description}
+    //     {item.matchID}
+    //     {item.timeM} {item.description}
     //   </div>
     // ));
-
-    var obj = [...this.state.clients];
-    obj.sort((a, b) => a.timeM - b.timeM);
-    obj.map((item, i) => (
-      <div key={i}>
-        {' '}
-        {item.matchID}
-        {item.timeM} {item.description}
-      </div>
-    ));
   }
 
   handleSelectCheckIn = (id, checkIn) => {
@@ -79,19 +82,19 @@ class ClientList extends Component {
             <h1>My Clients</h1>
             <div id="border" className="card">
               <ul id="listBackdrop" className="list-group list-group-flush">
-                {this.state.clients.map(clients => {
-                  return (
+                {this.state.clients
+                  .sort((a, b) => a.client.name.localeCompare(b.client.name))
+                  .map((item, i) => (
                     <NameCard
-                      id={clients.client.id}
-                      key={clients.client.id}
-                      name={clients.client.name}
-                      phone={clients.client.phone}
-                      courtDates={clients.client.courtDates}
-                      checkIns={clients.client.checkIns}
+                      id={i}
+                      key={i}
+                      name={item.client.name}
+                      phone={item.client.phone}
+                      courtDates={item.client.courtDates}
+                      checkIns={item.client.checkIns}
                       handleClick={this.handleClick}
                     />
-                  );
-                })}
+                  ))}
               </ul>
             </div>
           </div>
