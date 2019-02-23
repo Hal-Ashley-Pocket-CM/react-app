@@ -137,7 +137,9 @@ class ClientConnect extends Component {
               <div id="" className="row">
                 <div className="col-md-12">
                   <div style={{ textAlign: 'left', marginLeft: '10px' }}>
-                    <h4>{this.state.selectedClient.name}</h4>
+                    <h4>
+                      {this.state.selectedClient.name || 'Select a Client'}
+                    </h4>
                     <h4>{this.state.selectedClient.phone}</h4>
                   </div>
                 </div>
