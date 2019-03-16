@@ -9,6 +9,7 @@ const NameCard = props => {
       onClick={() =>
         props.handleClick(
           props.id,
+          props.soNumber,
           props.name,
           props.phone,
           props.courtDates,

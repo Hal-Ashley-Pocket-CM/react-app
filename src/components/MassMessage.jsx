@@ -7,9 +7,14 @@ class MassMessage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: ''
+      text: '',
+      selectAll: false,
+      checked: false,
+      names: [],
+      allClients: []
     };
     this.handleDateChange = this.handleDateChange.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleSubmitNow = this.handleSubmitNow.bind(this);
     this.handleSubmitLater = this.handleSubmitLater.bind(this);
@@ -37,6 +42,7 @@ class MassMessage extends Component {
     }
     this.setState({ text: '' });
   };
+
   handleSubmitLater = text => {
     console.log('handle submit later selected');
     if (this.state.text) {
@@ -44,6 +50,39 @@ class MassMessage extends Component {
     }
     this.setState({ text: '' });
   };
+  handleClientChange(e, names) {
+    // const name = e.target.name;
+    // const isChecked = e.target.checked;
+    // this.setState({
+    //   clients: name,
+    //   isChecked
+    // });
+
+    const target = e.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value,
+      names: names
+    });
+  }
+
+  handleInputChange(event, all) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value,
+      allClients: all
+    });
+  }
+
+  componentDidUpdate() {
+    console.log('select all status: ', this.state.selectAll);
+    console.log('Individual clients selected', this.state.client);
+  }
 
   render() {
     return (
@@ -84,6 +123,10 @@ class MassMessage extends Component {
                         <div className="input-group-text">
                           <input
                             type="checkbox"
+                            name="selectAll"
+                            value={clients}
+                            checked={this.state.selectAll}
+                            onChange={this.handleInputChange}
                             aria-label="Checkbox for following text input"
                           />
                         </div>
@@ -95,14 +138,16 @@ class MassMessage extends Component {
                         a.client.name.localeCompare(b.client.name)
                       )
                       .map((clients, i) => (
-                        /* {clients.map(clients => {
-                      return ( */
-
                         <div className="input-group mb-3">
                           <div className="input-group-prepend">
                             <div className="input-group-text">
                               <input
+                                id={clients.id}
+                                key={clients.key}
                                 type="checkbox"
+                                name={clients.client.name}
+                                checked={this.state.name}
+                                onChange={this.handleClientChange}
                                 aria-label="Checkbox for following text input"
                               />
                             </div>
@@ -111,7 +156,10 @@ class MassMessage extends Component {
                           <p
                             id={i}
                             key={i}
-                            name={clients.client.name}
+                            type="name"
+                            name="client"
+                            value={clients.client}
+                            onChange={this.handleClientChange}
                             phone={clients.client.phone}
                             className="form-control"
                           >

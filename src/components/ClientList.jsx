@@ -52,7 +52,7 @@ class ClientList extends Component {
     console.log(checkIn);
   };
 
-  handleClick = (id, name, phone, courtDates, checkIns) => {
+  handleClick = (id, soNumber, name, phone, courtDates, checkIns) => {
     // add checkins the array of objects to this selected Client object. Then display the array of checkins showing each check in as a list item
     // instead of adding checkins to this object we could go and get them using an api call
     this.setState({
@@ -60,15 +60,26 @@ class ClientList extends Component {
         id: id,
         name: name,
         phone: phone,
-        courtDates: courtDates,
+        // courtDates: courtDates,
+        soNumber: soNumber,
         checkIns: checkIns
       }
     });
+
+    if (courtDates) {
+      this.setState({
+        courtDates: courtDates
+      });
+    } else {
+      this.setState({
+        courtDates: 'None'
+      });
+    }
   };
 
   componentDidUpdate() {
-    let client = this.state.selectedClient;
-    // console.log(client);
+    var client = this.state.selectedClient;
+    console.log(client);
   }
   //Current goal here to map through an array of clients. This should render an individual card per name. These cards should have a click function attached to each that will allow the case manager to get information specifically tied to client they clicked on.
   render() {
@@ -79,7 +90,7 @@ class ClientList extends Component {
             className="col-md-2"
             style={{ textAlign: 'left', marginTop: '15px', marginLeft: '15px' }}
           >
-            <h1>My Clients</h1>
+            <h1 id="myClients">My Clients</h1>
             <div id="border" className="card">
               <ul id="listBackdrop" className="list-group list-group-flush">
                 {this.state.clients
@@ -88,6 +99,7 @@ class ClientList extends Component {
                     <NameCard
                       id={i}
                       key={i}
+                      soNumber={item.client.soNumber}
                       name={item.client.name}
                       phone={item.client.phone}
                       courtDates={item.client.courtDates}
@@ -115,8 +127,12 @@ class ClientList extends Component {
               </div> */}
 
               <div
+                id="mainCard"
                 className="row"
-                style={{ textAlign: 'left', marginLeft: '10%' }}
+                style={{
+                  textAlign: 'left',
+                  marginLeft: '10%'
+                }}
               >
                 <div className="col-md-6">
                   <h3
@@ -129,9 +145,11 @@ class ClientList extends Component {
                   <h5 style={{ marginTop: '3%' }}>
                     Client e-track #: {this.state.selectedClient.id}
                   </h5>
+                  <h5>SO #: {this.state.selectedClient.soNumber}</h5>
                   <h5>Name: {this.state.selectedClient.name}</h5>
                   <h5>Phone: {this.state.selectedClient.phone}</h5>
                   <h5>Court Dates: {this.state.selectedClient.courtDates}</h5>
+                  <h5>Homework: </h5>
                 </div>
 
                 <div className="col-md-6">
