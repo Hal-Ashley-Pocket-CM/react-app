@@ -34,27 +34,33 @@ class Profile extends Component {
         <div className="row">
           <div className="col-md-12">
             <div
-              className="card mx-auto"
+              className="card mx-auto bg-dark"
               style={{
                 width: '18rem',
                 marginTop: '5%',
-
+                // backgroundColor: 'darkgrey',
                 boxShadow: '3px 3px 6px 3px #2E8B57'
               }}
             >
-              <div className="card-body">
+              <div className="card-body" style={{ color: 'white' }}>
                 <div className="row">
                   <div className="col-md-12">
                     <h3
                       id="title"
-                      //   style={{ textShadow: '2px 2px 4px #000000' }}
+                      style={{
+                        textShadow: '2px 2px 4px #000000'
+                      }}
                     >
                       Case Manager Profile
                     </h3>
                   </div>
                 </div>
 
-                <h5 id="profile" className="card-title">
+                <h5
+                  id="profile"
+                  className="card-title"
+                  style={{ textShadow: '2px 2px 4px #000000' }}
+                >
                   Profile
                 </h5>
                 <form className="form-group" onSubmit={this.handleSubmit}>
