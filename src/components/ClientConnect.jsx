@@ -92,7 +92,13 @@ class ClientConnect extends Component {
           >
             <h1 id="myClients">My Clients</h1>
             <div id="clientButtons" className="card">
-              <ul id="listBackdrop" className="list-group list-group-flush">
+              <ul
+                id="listBackdrop"
+                className="list-group list-group-flush"
+                style={{
+                  boxShadow: '2px 4px 6px 0 black'
+                }}
+              >
                 {this.state.clients
                   .sort((a, b) => a.client.name.localeCompare(b.client.name))
                   .map((item, i) => (

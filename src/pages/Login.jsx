@@ -39,7 +39,11 @@ class Login extends Component {
           <div className="col-md-4">
             <div
               className="card dark bg-dark"
-              style={{ textAlign: 'center', marginTop: '40%' }}
+              style={{
+                textAlign: 'center',
+                marginTop: '40%',
+                boxShadow: '0 2px 6px 0 black'
+              }}
             >
               <h3 style={{ color: 'white', textShadow: '2px 2px 4px #000000' }}>
                 Welcome to PCM
