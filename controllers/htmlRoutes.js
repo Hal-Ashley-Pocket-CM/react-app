@@ -13,12 +13,12 @@
 //LogOut function for a case manager
 // const path = require('path');
 // const router = require('express').Router();
-// // const apiRoutes = require('./');
+// const apiRoutes = require('./controller');
 
-// // // API Routes
-// router.use('/');
+// // // // API Routes
+// // router.use('/');
 
-// // If no API routes are hit, send the React app
+// // // If no API routes are hit, send the React app
 // router.use(function(req, res) {
 //   res.sendFile(path.join(__dirname, 'public'));
 // });

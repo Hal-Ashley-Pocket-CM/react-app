@@ -171,7 +171,7 @@ class ClientList extends Component {
                         <img
                           style={{ width: '10%', height: '10%' }}
                           src="../Location_Tag_Point-512.png"
-                          alt="Check-in Image"
+                          alt="Check-in"
                         />
                       </div>
                     </div>
