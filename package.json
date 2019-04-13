@@ -1,32 +1,31 @@
 {
-  "name": "pocket-cm",
-  "version": "0.1.0",
-  "private": true,
+  "name": "pcm-server",
+  "version": "1.0.0",
+  "description": "PCM Server",
+  "main": "app.js",
   "dependencies": {
-    "moment": "^2.24.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.7.0",
-    "react-datepicker": "^2.1.0",
-    "react-dom": "^16.7.0",
-    "react-redux": "^6.0.0",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.2",
-    "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0"
+    "body-parser": "^1.18.3",
+    "core-js": "^3.0.0",
+    "express": "^4.16.4",
+    "if-env": "^1.0.4",
+    "mysql": "^2.16.0",
+    "mysql2": "^1.6.4",
+    "path": "^0.12.7",
+    "react-scripts": "^2.1.8",
+    "sequelize": "^4.42.0",
+    "sequelize-cli": "^5.4.0",
+    "sqlite3": "^4.0.6",
+    "tedious": "^5.0.3"
+  },
+  "devDependencies": {
+    "concurrently": "^4.0.1",
+    "nodemon": "^1.11.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm start"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "author": "",
+  "license": "ISC"
 }

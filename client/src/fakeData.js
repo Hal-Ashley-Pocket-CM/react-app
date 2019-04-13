@@ -4,6 +4,7 @@ const clients = [
   {
     client: {
       id: 1,
+      soNumber: 584987487,
       name: 'Bob Marley',
       phone: '702-555-5656',
       checkIns: []
@@ -12,6 +13,7 @@ const clients = [
   {
     client: {
       id: 2,
+      soNumber: 584987487,
       name: 'Harry Potter',
       phone: '555-888-4444',
       checkIns: [
@@ -31,6 +33,7 @@ const clients = [
   {
     client: {
       id: 3,
+      soNumber: 584987487,
       name: 'Hermoine Granger',
       phone: '565-454-8888',
       checkIns: [
@@ -50,6 +53,7 @@ const clients = [
   {
     client: {
       id: 4,
+      soNumber: 584987487,
       name: 'Jon Snow',
       phone: '555-888-7777',
       checkIns: [
@@ -69,6 +73,7 @@ const clients = [
   {
     client: {
       id: 5,
+      soNumber: 584987487,
       name: 'Larry H. Miller',
       phone: '666-888-8585',
       checkIns: [
@@ -88,6 +93,7 @@ const clients = [
   {
     client: {
       id: 6,
+      soNumber: 584987487,
       name: 'Rob Stark',
       phone: '699-969-6699',
       checkIns: [
@@ -107,6 +113,7 @@ const clients = [
   {
     client: {
       id: 7,
+      soNumber: 584987487,
       name: 'Vivian Ward',
       phone: '565-999-9696',
       checkIns: [
@@ -126,6 +133,7 @@ const clients = [
   {
     client: {
       id: 8,
+      soNumber: 584987487,
       name: 'Steve Jobs',
       phone: '444-555-5656',
       checkIns: [
@@ -145,6 +153,7 @@ const clients = [
   {
     client: {
       id: 9,
+      soNumber: 584987487,
       name: 'Jacob Henderson',
       phone: '699-696-9969',
       checkIns: [
@@ -164,6 +173,7 @@ const clients = [
   {
     client: {
       id: 10,
+      soNumber: 584987487,
       name: 'Cortney Horn',
       phone: '999-666-3333',
       checkIns: [
@@ -183,6 +193,7 @@ const clients = [
   {
     client: {
       id: 11,
+      soNumber: 584987487,
       name: 'John Jacob Jingelheimer Schmit',
       phone: '787-999-5555',
       checkIns: [
@@ -202,6 +213,7 @@ const clients = [
   {
     client: {
       id: 12,
+      soNumber: 584987487,
       name: 'Steve Rogers',
       phone: '454-898-5555',
       checkIns: [
@@ -221,6 +233,7 @@ const clients = [
   {
     client: {
       id: 13,
+      soNumber: 584987487,
       name: 'Edward Lewis',
       phone: '902-867-5309',
       checkIns: [
@@ -240,6 +253,7 @@ const clients = [
   {
     client: {
       id: 14,
+      soNumber: 584987487,
       name: 'Kanye West',
       phone: '232-565-5555',
       checkIns: [
@@ -259,6 +273,7 @@ const clients = [
   {
     client: {
       id: 15,
+      soNumber: 584987487,
       name: 'Taylor Swift',
       phone: '898-222-3366',
       checkIns: [
@@ -278,6 +293,7 @@ const clients = [
   {
     client: {
       id: 16,
+      soNumber: 584987487,
       name: 'Reba Mcintyre',
       phone: '454-666-9999',
       checkIns: [
@@ -297,6 +313,7 @@ const clients = [
   {
     client: {
       id: 17,
+      soNumber: 584987487,
       name: 'Bill Murrey',
       phone: '555-666-4444',
       checkIns: [

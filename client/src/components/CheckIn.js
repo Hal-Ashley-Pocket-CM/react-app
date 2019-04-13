@@ -3,9 +3,9 @@ import './clientList.css';
 const CheckIn = props => {
   return (
     <li
-      id={props.id}
-      key={props.id}
-      onClick={() => props.handleSelectCheckIn(props.id, props.checkIn)}
+      id={Number.toString()}
+      key={Number.toString()}
+      onClick={() => props.handleSelectCheckIn(props.key, props.checkIn)}
     >
       <a href="#">{props.checkIn}</a>
     </li>

@@ -10,6 +10,7 @@
 .list-group-item {
   background-color: grey;
   font-size: 16px;
+  font-family: 'Cousine', monospace;
 }
 
 a {
@@ -19,4 +20,12 @@ a {
 a:hover {
   color: blue;
   text-decoration: none;
+}
+
+#mainCard {
+  font-family: 'Cousine', monospace;
+}
+
+#myClients {
+  font-family: 'Happy Monkey', cursive;
 }

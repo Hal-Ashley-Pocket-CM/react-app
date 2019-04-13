@@ -5,6 +5,7 @@ import MassMessage from './MassMessage';
 // import CalendarModal from './CalendarModal';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import './clientConnect.css';
 class ClientConnect extends Component {
   constructor(props) {
     super(props);
@@ -38,11 +39,11 @@ class ClientConnect extends Component {
     );
   };
 
-  handleClick = (id, name, phone, messages) => {
+  handleClick = (id, soNumber, name, phone, messages) => {
     console.log('clicked: ', id, name, phone);
     // let phone = this.clients.phone;
     this.setState({
-      selectedClient: { name: name, id: id, phone: phone }
+      selectedClient: { name: name, id: id, soNumber: soNumber, phone: phone }
     });
   };
   handleChange = event => {
@@ -89,15 +90,22 @@ class ClientConnect extends Component {
               marginLeft: '15px'
             }}
           >
-            <h1>My Clients</h1>
+            <h1 id="myClients">My Clients</h1>
             <div id="clientButtons" className="card">
-              <ul id="listBackdrop" className="list-group list-group-flush">
+              <ul
+                id="listBackdrop"
+                className="list-group list-group-flush"
+                style={{
+                  boxShadow: '2px 4px 6px 0 black'
+                }}
+              >
                 {this.state.clients
                   .sort((a, b) => a.client.name.localeCompare(b.client.name))
                   .map((item, i) => (
                     <NameCard
                       id={i}
                       key={i}
+                      soNumber={item.client.soNumber}
                       name={item.client.name}
                       phone={item.client.phone}
                       courtDates={item.client.courtDates}

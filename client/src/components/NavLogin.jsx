@@ -6,7 +6,7 @@ const NavLogin = props => (
       className="navbar navbar-dark bg-dark"
       style={{
         textShadow: '2px 2px 4px #000000',
-        boxShadow: '0 2px 6px 0 #808080'
+        boxShadow: '0 2px 6px 0 black'
       }}
     >
       {/* <a className="navbar-brand" href="#">
