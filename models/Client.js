@@ -3,17 +3,23 @@ const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   const Client = sequelize.define('Client', {
     firstName: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING
     },
     lastName: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING
     },
     phone: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING
+    },
+    soNumber: {
+      type: DataTypes.INTEGER
+    },
+    etrack: {
+      type: DataTypes.INTEGER
     },
     active: {
-      type: Sequelize.ENUM('active', 'inactive'),
-      defaultValue: 'active'
+      type: DataTypes.BOOLEAN,
+      defaultValue: true
     }
   });
 

@@ -1,10 +1,11 @@
 const express = require('express');
 var bodyParser = require('body-parser');
-const path = require('path');
+// const path = require('path');
+// const router = require('express').Router();
 const Sequelize = require('sequelize');
 var PORT = process.env.PORT || 8080;
-// const routes = require('./controllers');
-
+// const routes = require('./routes');
+// app.use(routes);
 //database
 const db = require('./models');
 // const db = require('./config/database');
@@ -17,17 +18,23 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-// if (process.env.NODE_ENV === 'production') {
-//   app.use(express.static('client/build'));
-// }
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+}
 
-app.get('/', (req, res) =>
-  res.sendFile(path.join(__dirname, '/client/public/index.html'))
-);
+// app.get(function(req, res) {
+//   res.sendFile(path.join(__dirname, '/client/build/index.html'));
+//   if (err) {
+//     throw err;
+//   }
+// });
+// app.get('/', (req, res) =>
+
+// );
 
 // app.get('/', (req, res) => res.send('HELLO WORLD'));
 // require('./controllers/caseManagerRoutes')(app);
-// require('./controllers/htmlRoutes')(app);
+require('./controllers/routesA.js')(app);
 // app.use(routes);
 
 db.sequelize.sync({ force: false }).then(function() {

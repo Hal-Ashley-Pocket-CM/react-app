@@ -1,15 +1,29 @@
-const Sequelize = require('sequelize');
+// const Sequelize = require('sequelize');
 // const db = require('../config/database');
-
+'use strict';
 module.exports = function(sequelize, DataTypes) {
-  const Message = sequelize.define('Message', {
-    message: {
-      type: Sequelize.TEXT
+  const Message = sequelize.define(
+    'Message',
+    {
+      id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+      },
+      message: {
+        type: DataTypes.STRING,
+        allowNull: false
+      }
+      // recipient: {
+      //   type: DataTypes.STRING,
+      //   allowNull: false
+      // I Need this value but it's erring out}
     },
-    timeStamp: {
-      type: Sequelize.DATE
+    {
+      // tableName: 'Message',
+      timeStamps: false
     }
-  });
+  );
 
   return Message;
 };
