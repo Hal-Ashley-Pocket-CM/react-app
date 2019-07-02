@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import Nav from '../components/Navbar';
-import './profile.css';
+import React, { Component } from "react";
+import Nav from "../components/Navbar";
+import "./profile.css";
 class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {
       caseManager: {},
-      password: 'Ilovecoffee22',
-      username: 'ajimenez@slco.org'
+      password: "Ilovecoffee22",
+      username: "ajimenez@slco.org"
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleChangePassword = this.handleChangePassword.bind(this);
@@ -15,8 +15,8 @@ class Profile extends Component {
   }
   handleSubmit(event) {
     event.preventDefault();
-    console.log('Profile update submitted');
-    console.log('info submitted', this.state.username, this.state.password);
+    console.log("Profile update submitted");
+    console.log("info submitted", this.state.username, this.state.password);
     // console.log(this.state.email);
     // console.log(this.state.password);
   }
@@ -36,19 +36,19 @@ class Profile extends Component {
             <div
               className="card mx-auto bg-dark"
               style={{
-                width: '18rem',
-                marginTop: '5%',
+                width: "18rem",
+                marginTop: "5%",
                 // backgroundColor: 'darkgrey',
-                boxShadow: '3px 3px 6px 3px #2E8B57'
+                boxShadow: "3px 3px 6px 3px #2E8B57"
               }}
             >
-              <div className="card-body" style={{ color: 'white' }}>
+              <div className="card-body" style={{ color: "white" }}>
                 <div className="row">
                   <div className="col-md-12">
                     <h3
                       id="title"
                       style={{
-                        textShadow: '2px 2px 4px #000000'
+                        textShadow: "2px 2px 4px #000000"
                       }}
                     >
                       Case Manager Profile
@@ -59,28 +59,28 @@ class Profile extends Component {
                 <h5
                   id="profile"
                   className="card-title"
-                  style={{ textShadow: '2px 2px 4px #000000' }}
+                  style={{ textShadow: "2px 2px 4px #000000" }}
                 >
                   Profile
                 </h5>
                 <form className="form-group" onSubmit={this.handleSubmit}>
-                  <label>Username</label>
+                  {/* <label>Username</label> */}
                   <input
                     aria-label="Username"
                     value={this.state.username}
                     onChange={this.handleChange}
-                    style={{ borderWidth: '3px' }}
+                    style={{ borderWidth: "3px" }}
                   />
-                  <label>Password</label>
+                  {/* <label>Password</label> */}
                   <input
                     aria-label="Password"
                     value={this.state.password}
                     onChange={this.handleChangePassword}
-                    style={{ borderWidth: '3px' }}
+                    style={{ borderWidth: "3px" }}
                   />
                   <div
                     className="col-md-12"
-                    style={{ textAlign: 'right', marginTop: '5%' }}
+                    style={{ textAlign: "right", marginTop: "5%" }}
                   >
                     <button type="submit" className="btn btn-outline-success">
                       Update
